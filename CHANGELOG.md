@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.1...1.0.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* force all endings to LF ([c95e80f](https://github.com/cktf/terraform-kubernetes-environment/commit/c95e80f156a935b0ce678f50064d325b385558d8))
+
 ## [1.0.1](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.0...1.0.1) (2022-07-26)
 
 
