@@ -5,8 +5,8 @@ output "kubeconfig" {
     clusters = [{
       name = "default"
       cluster = {
-        server                     = var.kubernetes_host
-        certificate-authority-data = base64encode(var.kubernetes_ca_crt)
+        server                     = var.host
+        certificate-authority-data = base64encode(var.ca_crt)
       }
     }]
     users = [{

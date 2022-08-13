@@ -5,37 +5,27 @@ variable "name" {
   description = "Kubernetes Environment Name"
 }
 
-variable "registry_endpoint" {
+variable "host" {
   type        = string
   default     = ""
   sensitive   = false
-  description = "Kubernetes Environment Registry Endpoint"
+  description = "Kubernetes Cluster Host"
 }
 
-variable "registry_username" {
+variable "ca_crt" {
   type        = string
   default     = ""
   sensitive   = true
-  description = "Kubernetes Environment Registry Username"
+  description = "Kubernetes Cluster CA Certificate"
 }
 
-variable "registry_password" {
-  type        = string
-  default     = ""
-  sensitive   = true
-  description = "Kubernetes Environment Registry Password"
-}
-
-variable "kubernetes_host" {
-  type        = string
-  default     = ""
+variable "registry" {
+  type = object({
+    endpoint = string
+    username = string
+    password = string
+  })
+  default     = null
   sensitive   = false
-  description = "Kubernetes Host"
-}
-
-variable "kubernetes_ca_crt" {
-  type        = string
-  default     = ""
-  sensitive   = true
-  description = "Kubernetes CA Certificate"
+  description = "Kubernetes Registry Credentials"
 }
