@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.2...1.0.3) (2022-08-13)
+
+
+### Bug Fixes
+
+* change variable names ([3119408](https://github.com/cktf/terraform-kubernetes-environment/commit/311940858a0641df29a18b3d37672b0ec257837c))
+
 ## [1.0.2](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.1...1.0.2) (2022-07-28)
 
 
