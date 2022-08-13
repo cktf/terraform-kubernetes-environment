@@ -19,6 +19,10 @@ terraform init
 ```hcl
 module "environment" {
   source = "cktf/environment/kubernetes"
+
+  name   = "staging"
+  host   = "<KUBERNETES_HOST>"
+  ca_crt = "<KUBERNETES_CA_CRT>"
 }
 ```
 
