@@ -5,20 +5,6 @@ variable "name" {
   description = "Kubernetes Environment Name"
 }
 
-variable "host" {
-  type        = string
-  default     = ""
-  sensitive   = false
-  description = "Kubernetes Cluster Host"
-}
-
-variable "ca_crt" {
-  type        = string
-  default     = ""
-  sensitive   = true
-  description = "Kubernetes Cluster CA Certificate"
-}
-
 variable "registry" {
   type = object({
     endpoint = string
@@ -27,5 +13,26 @@ variable "registry" {
   })
   default     = null
   sensitive   = false
-  description = "Kubernetes Registry Credentials"
+  description = "Kubernetes Environment Registry"
+}
+
+variable "quota" {
+  type        = map(string)
+  default     = null
+  sensitive   = false
+  description = "Kubernetes Environment Quota"
+}
+
+variable "ingress" {
+  type        = list(string)
+  default     = null
+  sensitive   = false
+  description = "Kubernetes Environment Ingress"
+}
+
+variable "egress" {
+  type        = list(string)
+  default     = null
+  sensitive   = false
+  description = "Kubernetes Environment Egress"
 }

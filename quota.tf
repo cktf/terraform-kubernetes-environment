@@ -1,16 +1,13 @@
-# resource "kubernetes_resource_quota" "this" {
-#   depends_on = [kubernetes_namespace.this]
+resource "kubernetes_resource_quota" "this" {
+  count      = can(var.quota) ? 1 : 0
+  depends_on = [kubernetes_namespace.this]
 
-#   metadata {
-#     name      = "default"
-#     namespace = var.name
-#   }
+  metadata {
+    name      = "default"
+    namespace = var.name
+  }
 
-#   spec {
-#     hard = {
-#       "cpu"               = each.value.project.quota.cpu
-#       "memory"            = each.value.project.quota.ram
-#       "ephemeral-storage" = each.value.project.quota.hdd
-#     }
-#   }
-# }
+  spec {
+    hard = try(var.quota, {})
+  }
+}

@@ -1,30 +1,7 @@
-output "kubeconfig" {
-  value = yamlencode({
-    apiVersion = "v1"
-    kind       = "Config"
-    clusters = [{
-      name = "default"
-      cluster = {
-        server                     = var.host
-        certificate-authority-data = base64encode(var.ca_crt)
-      }
-    }]
-    users = [{
-      name = "default"
-      user = {
-        token = data.kubernetes_secret.this.data["token"]
-      }
-    }]
-    contexts = [{
-      name = "default"
-      context = {
-        cluster   = "default"
-        user      = "default"
-        namespace = data.kubernetes_secret.this.data["namespace"]
-      }
-    }]
-    current-context = "default"
-  })
-  sensitive   = true
-  description = "Kubernetes Environment Config"
+output "namespace" {
+  depends_on = [kubernetes_namespace.this]
+
+  value       = var.name
+  sensitive   = false
+  description = "Kubernetes Environment Namespace"
 }

@@ -17,48 +17,10 @@ resource "kubernetes_secret" "this" {
   data = {
     ".dockerconfigjson" = jsonencode({
       "auths" : {
-        "${var.registry.endpoint}" : {
-          "auth" : base64encode("${var.registry.username}:${var.registry.password}")
+        "${try(var.registry.endpoint, "")}" : {
+          "auth" : base64encode("${try(var.registry.username, "")}:${try(var.registry.password, "")}")
         }
       }
     })
-  }
-}
-
-resource "kubernetes_service_account" "this" {
-  depends_on = [kubernetes_namespace.this]
-
-  metadata {
-    name      = "admin"
-    namespace = var.name
-  }
-}
-
-resource "kubernetes_role_binding" "this" {
-  depends_on = [kubernetes_service_account.this]
-
-  metadata {
-    name      = "admin"
-    namespace = var.name
-  }
-
-  role_ref {
-    api_group = "rbac.authorization.k8s.io"
-    kind      = "ClusterRole"
-    name      = "edit"
-  }
-  subject {
-    kind      = "ServiceAccount"
-    name      = "admin"
-    namespace = var.name
-  }
-}
-
-data "kubernetes_secret" "this" {
-  depends_on = [kubernetes_service_account.this]
-
-  metadata {
-    name      = kubernetes_service_account.this.default_secret_name
-    namespace = var.name
   }
 }
