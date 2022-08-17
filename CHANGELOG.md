@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.3...1.2.0) (2022-08-17)
+
+
+### Features
+
+* add opaque secrets ([7ecd758](https://github.com/cktf/terraform-kubernetes-environment/commit/7ecd7582ffbaa202de2e81090bb743fbc5f167ac))
+
 ## [1.1.3](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.2...1.1.3) (2022-08-17)
 
 
