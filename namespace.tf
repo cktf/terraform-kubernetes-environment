@@ -5,7 +5,6 @@ resource "kubernetes_namespace" "this" {
 }
 
 resource "kubernetes_secret" "this" {
-  count      = can(var.registry) ? 1 : 0
   depends_on = [kubernetes_namespace.this]
 
   metadata {
@@ -17,8 +16,8 @@ resource "kubernetes_secret" "this" {
   data = {
     ".dockerconfigjson" = jsonencode({
       "auths" : {
-        "${try(var.registry.endpoint, "")}" : {
-          "auth" : base64encode("${try(var.registry.username, "")}:${try(var.registry.password, "")}")
+        "${coalesce(var.registry.endpoint, "")}" : {
+          "auth" : base64encode("${coalesce(var.registry.username, "")}:${coalesce(var.registry.password, "")}")
         }
       }
     })

@@ -16,23 +16,23 @@ variable "registry" {
   description = "Kubernetes Environment Registry"
 }
 
-variable "quota" {
-  type        = map(string)
-  default     = null
-  sensitive   = false
-  description = "Kubernetes Environment Quota"
-}
-
 variable "ingress" {
   type        = list(string)
-  default     = null
+  default     = []
   sensitive   = false
   description = "Kubernetes Environment Ingress"
 }
 
 variable "egress" {
   type        = list(string)
-  default     = null
+  default     = []
   sensitive   = false
   description = "Kubernetes Environment Egress"
+}
+
+variable "quota" {
+  type        = map(string)
+  default     = {}
+  sensitive   = false
+  description = "Kubernetes Environment Quota"
 }

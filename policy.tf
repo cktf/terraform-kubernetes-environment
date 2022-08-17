@@ -1,5 +1,4 @@
 resource "kubernetes_network_policy" "this" {
-  count      = (can(var.ingress) || can(var.egress)) ? 1 : 0
   depends_on = [kubernetes_namespace.this]
 
   metadata {
@@ -8,16 +7,13 @@ resource "kubernetes_network_policy" "this" {
   }
 
   spec {
-    policy_types = [
-      can(var.ingress) ? "Ingress" : null,
-      can(var.egress) ? "Egress" : null
-    ]
+    policy_types = ["Ingress", "Egress"]
 
     pod_selector {}
 
     ingress {
       dynamic "from" {
-        for_each = try(var.ingress, [])
+        for_each = tomap(coalesce(var.ingress, []))
 
         content {
           namespace_selector {
@@ -31,7 +27,7 @@ resource "kubernetes_network_policy" "this" {
 
     egress {
       dynamic "to" {
-        for_each = try(var.egress, [])
+        for_each = tomap(coalesce(var.egress, []))
 
         content {
           namespace_selector {

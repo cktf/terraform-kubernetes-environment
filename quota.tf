@@ -1,5 +1,4 @@
 resource "kubernetes_resource_quota" "this" {
-  count      = can(var.quota) ? 1 : 0
   depends_on = [kubernetes_namespace.this]
 
   metadata {
@@ -8,6 +7,6 @@ resource "kubernetes_resource_quota" "this" {
   }
 
   spec {
-    hard = try(var.quota, {})
+    hard = coalesce(var.quota, {})
   }
 }
