@@ -20,9 +20,17 @@ terraform init
 module "environment" {
   source = "cktf/environment/kubernetes"
 
-  name   = "staging"
-  host   = "<KUBERNETES_HOST>"
-  ca_crt = "<KUBERNETES_CA_CRT>"
+  name = "staging"
+  registry = {
+    endpoint = "<REGSITRY_ENDPOINT>"
+    username = "<REGSITRY_USERNAME>"
+    password = "<REGSITRY_PASSWORD>"
+  }
+  quota = {
+    cpu    = "1000"
+    memory = "200Gi"
+    pods   = "10"
+  }
 }
 ```
 
