@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.2...1.1.3) (2022-08-17)
+
+
+### Bug Fixes
+
+* disable ResourceQuota on empty quota ([fff7005](https://github.com/cktf/terraform-kubernetes-environment/commit/fff7005e19105980be436c5edfd8c9b4957890bb))
+
 ## [1.1.2](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.1...1.1.2) (2022-08-17)
 
 
