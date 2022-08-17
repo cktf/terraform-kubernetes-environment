@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.3...1.1.0) (2022-08-17)
+
+
+### Features
+
+* add ResourceQuota, NetworkPolicy ([d6add1b](https://github.com/cktf/terraform-kubernetes-environment/commit/d6add1b9deb53dcefb0d05c4afce66f932151fa0))
+
 ## [1.0.3](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.2...1.0.3) (2022-08-13)
 
 
