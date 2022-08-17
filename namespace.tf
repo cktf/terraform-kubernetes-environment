@@ -4,7 +4,7 @@ resource "kubernetes_namespace" "this" {
   }
 }
 
-resource "kubernetes_secret" "this" {
+resource "kubernetes_secret" "regcred" {
   depends_on = [kubernetes_namespace.this]
 
   metadata {

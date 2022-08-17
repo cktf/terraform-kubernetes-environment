@@ -16,6 +16,13 @@ variable "registry" {
   description = "Kubernetes Environment Registry"
 }
 
+variable "secrets" {
+  type        = map(string)
+  default     = {}
+  sensitive   = false
+  description = "Kubernetes Environment Secrets"
+}
+
 variable "ingress" {
   type        = list(string)
   default     = []
