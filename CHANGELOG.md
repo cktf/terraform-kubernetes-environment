@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.0...1.1.1) (2022-08-17)
+
+
+### Bug Fixes
+
+* change variables default value ([5617dd4](https://github.com/cktf/terraform-kubernetes-environment/commit/5617dd4fb90ae9f83f1ccb6c8bd4e3d983c70fd7))
+* convert list of ingress, egress to map ([a325cf6](https://github.com/cktf/terraform-kubernetes-environment/commit/a325cf68f37e2c3f940a49ae86dccc5c22820464))
+* remove coalesce functions ([22d33c1](https://github.com/cktf/terraform-kubernetes-environment/commit/22d33c13e3f39853ad1a5a1dcc9e84ee84a9d987))
+
 # [1.1.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.0.3...1.1.0) (2022-08-17)
 
 
