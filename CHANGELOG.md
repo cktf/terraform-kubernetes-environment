@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.1...1.1.2) (2022-08-17)
+
+
+### Bug Fixes
+
+* replace coalesce with try in registry secret ([0f2f177](https://github.com/cktf/terraform-kubernetes-environment/commit/0f2f1771e5c8aa352e9cca309225f6b0cb3c8c58))
+
 ## [1.1.1](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.0...1.1.1) (2022-08-17)
 
 
