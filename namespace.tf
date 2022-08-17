@@ -16,8 +16,8 @@ resource "kubernetes_secret" "this" {
   data = {
     ".dockerconfigjson" = jsonencode({
       "auths" : {
-        "${coalesce(var.registry.endpoint, "")}" : {
-          "auth" : base64encode("${coalesce(var.registry.username, "")}:${coalesce(var.registry.password, "")}")
+        "${try(var.registry.endpoint, "")}" : {
+          "auth" : base64encode("${try(var.registry.username, "")}:${try(var.registry.password, "")}")
         }
       }
     })
