@@ -13,7 +13,7 @@ resource "kubernetes_network_policy" "this" {
 
     ingress {
       dynamic "from" {
-        for_each = tomap(coalesce(var.ingress, []))
+        for_each = tomap(var.ingress)
 
         content {
           namespace_selector {
@@ -27,7 +27,7 @@ resource "kubernetes_network_policy" "this" {
 
     egress {
       dynamic "to" {
-        for_each = tomap(coalesce(var.egress, []))
+        for_each = tomap(var.egress)
 
         content {
           namespace_selector {

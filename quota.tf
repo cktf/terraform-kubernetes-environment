@@ -7,6 +7,6 @@ resource "kubernetes_resource_quota" "this" {
   }
 
   spec {
-    hard = coalesce(var.quota, {})
+    hard = var.quota
   }
 }
