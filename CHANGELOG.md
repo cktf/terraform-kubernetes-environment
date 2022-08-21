@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.2.0...1.3.0) (2022-08-21)
+
+
+### Features
+
+* create multiple secrets ([6f2ca4e](https://github.com/cktf/terraform-kubernetes-environment/commit/6f2ca4e7d9f78dbcfa3132e0b5148385f6bf2f24))
+
 # [1.2.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.1.3...1.2.0) (2022-08-17)
 
 
