@@ -17,7 +17,7 @@ variable "registry" {
 }
 
 variable "secrets" {
-  type        = map(string)
+  type        = map(map(string))
   default     = {}
   sensitive   = false
   description = "Kubernetes Environment Secrets"
