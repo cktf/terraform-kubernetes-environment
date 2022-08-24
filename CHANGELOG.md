@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/cktf/terraform-kubernetes-environment/compare/1.3.0...1.3.1) (2022-08-24)
+
+
+### Bug Fixes
+
+* change network policy, allow DNS, Internet ([46570ef](https://github.com/cktf/terraform-kubernetes-environment/commit/46570ef0ef75b3dc36f791bd9d88f13695f6ee64))
+
 # [1.3.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.2.0...1.3.0) (2022-08-21)
 
 
