@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/cktf/terraform-kubernetes-environment/compare/1.3.1...1.4.0) (2022-09-03)
+
+
+### Features
+
+* add linux support to terraform lock file ([8388b3a](https://github.com/cktf/terraform-kubernetes-environment/commit/8388b3a49e8db656ca1f8a0a603c2319e1eea0da))
+
 ## [1.3.1](https://github.com/cktf/terraform-kubernetes-environment/compare/1.3.0...1.3.1) (2022-08-24)
 
 
